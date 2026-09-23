@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08080c">
+  <title>Aaps Hub</title>
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <span class="brand-logo">AH</span>
+      <span>Aaps <b>Hub</b></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#apps">Apps</a>
+      <a href="#about">About</a>
+      <a class="admin-link" href="/login">Admin</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#apps">Apps</a>
+    <a href="#about">About</a>
+    <a href="/login">Admin</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">KIRAN JADHAV • APK STORE</div>
+    <h1>Discover.<br><span>Download.</span></h1>
+    <p>Aaps Hub is a simple place to discover Android apps and download published APKs.</p>
+    <div class="hero-buttons">
+      <a class="primary-btn" href="#apps">Explore Apps <i class="fa-solid fa-arrow-down"></i></a>
+      <a class="secondary-btn" href="/login">Admin Panel</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="glow"></div>
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <small>AAPS HUB</small>
+        <strong>YOUR<br>APP STORE</strong>
+        <div class="phone-card"><i class="fa-solid fa-mobile-screen-button"></i><span>APK Library</span></div>
+        <div class="phone-card"><i class="fa-solid fa-download"></i><span>Fast Downloads</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="search-section">
+  <div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input id="searchInput" type="search" placeholder="Search apps, categories..." autocomplete="off">
+    <kbd>⌘ K</kbd>
+  </div>
+</section>
+
+<section class="categories-section">
+  <button class="category active" data-category="All">All</button>
+  <button class="category" data-category="Games">Games</button>
+  <button class="category" data-category="Tools">Tools</button>
+  <button class="category" data-category="Social">Social</button>
+  <button class="category" data-category="Other">Other</button>
+</section>
+
+<section class="apps-section" id="apps">
+  <div class="section-heading">
+    <div>
+      <span>LIBRARY</span>
+      <h2>Latest Apps</h2>
+    </div>
+    <strong id="appCount">0 Apps</strong>
+  </div>
+  <div id="appsGrid" class="apps-grid"></div>
+  <div id="emptyState" class="empty-state" style="display:none">
+    <i class="fa-solid fa-box-open"></i>
+    <h3>No Apps Found</h3>
+    <p>No apps have been published yet.</p>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-card">
+    <div>
+      <span class="eyebrow">ABOUT AAPS HUB</span>
+      <h2>One place for your APK library.</h2>
+      <p>Apps are added from the protected admin panel. Visitors can search the library, open app details and download published APK files.</p>
+    </div>
+    <div class="about-mark">AH</div>
+  </div>
+</section>
+</main>
+
+<div class="modal" id="downloadModal" aria-hidden="true">
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-icon" id="modalIcon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+    <span class="modal-category" id="modalCategory">APP</span>
+    <h2 id="modalTitle">App</h2>
+    <p id="modalDescription">Description</p>
+    <div class="modal-info">
+      <div><small>VERSION</small><strong id="modalVersion">1.0</strong></div>
+      <div><small>DOWNLOADS</small><strong id="modalDownloads">0</strong></div>
+    </div>
+    <a id="modalDownload" class="download-btn" href="#"><i class="fa-solid fa-download"></i> Download APK</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-brand"><span class="brand-logo">AH</span><div><strong>Aaps Hub</strong><span>APK LIBRARY</span></div></div>
+    <div class="footer-center"><p>© <span id="year"></span> <strong>Kiran Jadhav</strong></p></div>
+    <div class="footer-social"><a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div>
+  </div>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
